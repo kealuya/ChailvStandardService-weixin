@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "component-search": "../common/search/search"
+    }
+}

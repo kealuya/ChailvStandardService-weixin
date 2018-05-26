@@ -1,0 +1,5 @@
+<!--pages/city/city.wxml-->
+<view>
+  <!-- 以下是对一个自定义组件的引用 -->
+  <component-search seletedNumber="{{city_value}}" seletedType="{{seletedType}}" bind:selectBack="onSelectBack"></component-search>
+</view>
