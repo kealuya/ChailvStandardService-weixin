@@ -7,6 +7,7 @@ Page({
     data: {
         city: "",
         city_value: 0,
+        cityType:null,
         seletedType:"city"
     },
 
@@ -17,7 +18,8 @@ Page({
         console.log(options);
         this.setData({
             city: options.city,
-            city_value: options.city_value
+            city_value: options.city_value,
+            cityType: options.cityType
         });
     },
 

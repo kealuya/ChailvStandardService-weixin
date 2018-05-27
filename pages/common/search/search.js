@@ -10,6 +10,9 @@ Component({
         },
         city_value:{
             type:String
+        },
+        cityType:{
+            type:String
         }
     },
     data: {
@@ -18,7 +21,7 @@ Component({
         inputShowed: false,
         inputVal: "",
         useHeight:0,
-        selectShowed: false,
+        selectShowed: false, 
     },
     //生命周期:attached
     attached:function(){
@@ -26,8 +29,11 @@ Component({
     //生命周期:ready
     ready: function () {
         var target;
-        if (this.data.seletedType == "city"){
+        if (this.data.cityType == "国内" && this.data.seletedType == "city"){
             target = travelDist.totalData.nation.provinceL;
+        } else if (this.data.cityType!="国内"){
+            target = travelDist.totalData.foreign.continent[this.data.cityType].nationL;
+                     
         }else{
             var tar = travelDist.totalData.nation.provinceL[this.data.city_value];
             target = travelDist.totalData.nation.province[tar].distL;

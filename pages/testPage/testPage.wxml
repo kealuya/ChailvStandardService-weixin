@@ -3,7 +3,7 @@
     <image style='height:250px;width:420px' src="{{image}}" mode="scaleToFill"></image>
  
     <view class="page__bd">
-        <view class="weui-cells__title">带图标、说明、跳转的列表项</view>
+        <view class="weui-cells__title">差旅标准查询</view>
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_select">
                 <view class="weui-cell__hd weui-cell__hd_in-select-after">
@@ -17,8 +17,8 @@
                         <view class="weui-select weui-select_in-select-after">{{countries[countryIndex]}}</view>
                     </picker>
                 </view>
-            </view>
-            <navigator url="../city/city?city={{city}}&city_value={{city_value}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            </view> 
+            <navigator url="../city/city?city={{city}}&city_value={{city_value}}&cityType={{cityType}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-label">
                     <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
                     <text>省市</text>
