@@ -6,7 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    icon: "../resource/icon/ic_launcher.png",
+    icon1: "../resource/icon/目的地.png",
+    icon2: "../resource/icon/出发时间.png",
+    icon3: "../resource/icon/到达时间.png",
+    icon4: "../resource/icon/职位.png",
     image: "../resource/image/16pic_4924482_b.jpg",
     countries: [],
     countryIndex: 0,
@@ -177,6 +180,29 @@ Page({
     this.setData({
       jobgradeIndex : e.detail.value
     });
+  },
+  bindBtnClick:function(){
+     
+    var searchLogs = wx.getStorageSync('searchLogs') || []
+
+    if (searchLogs.length == 10) {
+      searchLogs.pop();
+    }  
+    var data = this.data;
+    searchLogs.unshift({
+      cityType:data.cityType,
+      city: data.city,
+      local: data.local,
+      goDate: data.goDate,
+      backDate: data.backDate,
+      jobgradeIndex: data.jobgradeIndex,
+    })
+    wx.setStorageSync('searchLogs', searchLogs)
+
+     wx.navigateTo({
+       url: '../showPage/showPage?from=1',
+     })
+
   }
   
 
