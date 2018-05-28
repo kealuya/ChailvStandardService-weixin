@@ -17,7 +17,7 @@
                         <view class="weui-select weui-select_in-select-after">{{countries[countryIndex]}}</view>
                     </picker>
                 </view>
-            </view>
+            </view> 
             <navigator url="../city/city?city={{city}}&city_value={{city_value}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-label">
                     <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
