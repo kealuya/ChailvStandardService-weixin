@@ -1,1 +1,4 @@
 /* pages/testPage/testPage.wxss */
+.mybtn{
+  padding:20px
+}

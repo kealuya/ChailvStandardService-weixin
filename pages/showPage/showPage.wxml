@@ -1,0 +1,2 @@
+<!--pages/showPage/showPage.wxml-->
+<text>{{test}}</text>

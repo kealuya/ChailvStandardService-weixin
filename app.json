@@ -5,6 +5,7 @@
     "pages/testPage/testPage",
     "pages/common/search/search",
     "pages/city/city",
+    "pages/showPage/showPage",
     "pages/local/local"
   ],
   "window":{
