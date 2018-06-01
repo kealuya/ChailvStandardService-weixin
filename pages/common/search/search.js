@@ -30,10 +30,13 @@ Component({
     ready: function () {
         var target;
         if (this.data.cityType == "国内" && this.data.seletedType == "city"){
-            target = travelDist.totalData.nation.provinceL;
-        } else if (this.data.cityType!="国内"){
-            target = travelDist.totalData.foreign.continent[this.data.cityType].nationL;
-                     
+          target = travelDist.totalData.nation.provinceL;
+        } else if (this.data.cityType != "国内" && this.data.seletedType == "city") {
+          target = travelDist.totalData.foreign.continent[this.data.cityType].nationL;
+        } else if (this.data.cityType != "国内" && this.data.seletedType == "local") {
+          var nationL = travelDist.totalData.foreign.continent[this.data.cityType].nationL;
+          var city = nationL[this.data.city_value];
+          target = travelDist.totalData.foreign.continent[this.data.cityType][city].districtL;
         }else{
             var tar = travelDist.totalData.nation.provinceL[this.data.city_value];
             target = travelDist.totalData.nation.province[tar].distL;

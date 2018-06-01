@@ -1,1 +1,84 @@
 /* pages/showPage/showPage.wxss */
+
+.showHead {
+  background-color: #4a90e2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  flex-direction: column;
+}
+
+.headFont1 {
+  font-size: 28px;
+  color: white;
+}
+.headFont2 {
+  font-size: 16px;
+  color: white;
+}
+.headFont3{
+  font-size: 16px;
+  color: #f3a422;
+}
+
+.showTitle{
+  display: flex;
+  margin-top:5px;
+  margin-bottom:-5px;
+  margin-left:15px;
+  margin-right:15px;
+  flex-wrap:nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.showSub{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+.showBox{
+  border: 1px solid #4a90e2;
+  margin : 15px;
+  border-radius: 3px;
+  padding-top:15px;
+  padding:9px;
+  
+}
+.titleFont1{
+  
+  font-size: 24px;
+  color: #337ab7;
+}
+.titleFont2{
+  
+  font-size: 14px;
+  color: #337ab7;
+}
+.msgStyle{
+  width:20px;
+  height: 20px;
+}
+.tip{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #337ab7;
+  border: 1px solid #2e6da4;
+  border-radius: 3px;
+  margin-left: 8px;
+  height:20px
+}
+.showDetail{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.showZongjin{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

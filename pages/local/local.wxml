@@ -1,5 +1,5 @@
 <!--pages/local/local.wxml-->
 <view>
   <!-- 以下是对一个自定义组件的引用 -->
-  <component-search seletedNumber="{{local_value}}" city_value="{{city_value}}" seletedType="{{seletedType}}"  bind:selectBack="onSelectBack"></component-search>
+  <component-search seletedNumber="{{local_value}}"  cityType="{{cityType}}"  city_value="{{city_value}}" seletedType="{{seletedType}}"  bind:selectBack="onSelectBack"></component-search>
 </view>

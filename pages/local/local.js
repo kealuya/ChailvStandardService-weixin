@@ -8,7 +8,8 @@ Page({
         local: "",
         local_value: 0,
         city_value:0,
-        seletedType: "local"
+        seletedType: "local",
+        cityType:""
     },
 
 
@@ -20,7 +21,8 @@ Page({
         this.setData({
             local: options.local,
             local_value: options.local_value,
-            city_value: options.city_value
+            city_value: options.city_value,
+            cityType: options.cityType
         });
     },
 

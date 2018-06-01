@@ -16,12 +16,12 @@ Page({
     city: "北京",
     city_value: "0",
     cityType: "国内",
-    local: "全区",
+    local: "全市",
     local_value: "0",
     localType: "",
     goDate: "",
     backDate: "",
-    jobgrades: ["部级","司局级","普通"],
+    jobgrades: ["部级", "司局级", "普通"],
     jobgradeIndex: 0,
     windowWidth: wx.getSystemInfoSync().windowWidth
   },
@@ -30,6 +30,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '差旅标准查询'
+    })
     var countries = travelDist.totalData.foreign.continenL;
     countries.splice(0, 0, "国内");
     var myDate = new Date();
@@ -131,17 +134,21 @@ Page({
       var local = travelDist.totalData.nation.province[city].distL[0];
     } else {
       var local = travelDist.totalData.foreign.continent[cityType][city].districtL[0];
+      local = local == '' ? '-' : local;
     }
 
     this.setData({
       city: city,
       city_value: city_value,
-      local: local
+      local: local,
+      local_value: 0
     })
   },
   setLocalForSonPage: function (localSettingJson) {
+
+    var local = localSettingJson.local == '' ? '-' : localSettingJson.local;
     this.setData({
-      local: localSettingJson.local,
+      local: local,
       local_value: localSettingJson.local_value
     })
 
@@ -178,32 +185,33 @@ Page({
   },
   bindJobgradeChange: function (e) {
     this.setData({
-      jobgradeIndex : e.detail.value
+      jobgradeIndex: e.detail.value
     });
   },
-  bindBtnClick:function(){
-     
+  bindBtnClick: function () {
+
     var searchLogs = wx.getStorageSync('searchLogs') || []
 
     if (searchLogs.length == 10) {
       searchLogs.pop();
-    }  
+    }
     var data = this.data;
     searchLogs.unshift({
-      cityType:data.cityType,
+      cityType: data.cityType,
       city: data.city,
       local: data.local,
       goDate: data.goDate,
       backDate: data.backDate,
       jobgradeIndex: data.jobgradeIndex,
+      jobgrades: data.jobgrades
     })
     wx.setStorageSync('searchLogs', searchLogs)
 
-     wx.navigateTo({
-       url: '../showPage/showPage?from=1',
-     })
+    wx.navigateTo({
+      url: '../showPage/showPage?from=1',
+    })
 
   }
-  
+
 
 })
