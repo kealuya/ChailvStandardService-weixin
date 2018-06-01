@@ -128,6 +128,18 @@ Page({
       }
       buzhuList.push(buzhuJson);
 
+
+      var totalForM = (district_TM.money[1] + district_TM.money[2]) * dateIntervel;
+      var totalRmb = parseFloat(travelDist.currencyRateMap[district_TM.currency][1]) * totalForM;
+      //finalmoney = '补贴总额：' + totalForM + district_TM.currency + ',约合人民币' + parseInt(totalRmb) + '元';
+      
+      var totalAllowance =  totalForM + district_TM.currency  
+      var rmb = parseInt(totalRmb)  
+       var zongjinJson = {
+         total: totalAllowance,
+         city: searchLogs.city,
+         dateIntervel: dateIntervel
+       }
       //初期化data
       this.setData({
         now: new Date().pattern("MM-dd HH:mm"),
