@@ -1,0 +1,22 @@
+<view class="page">
+    <view style='display: flex;flex-direction: column;'>
+
+        <view class='title'>
+            <text class='headFont1'>{{title}}</text>
+        </view>
+
+
+        <view class='showBox'>
+            <view class='showSub'>
+                <view wx:for="{{contentArray}}" wx:key="*this">
+                    <text class='headFont3'>{{item.q}}</text>
+                    <view>
+                        <text class='headFont2'>{{item.a}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+
+    </view>
+</view>

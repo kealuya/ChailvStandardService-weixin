@@ -66,3 +66,7 @@ var totalTips={
             }
         };
 
+
+module.exports = {
+    totalTips: totalTips 
+}

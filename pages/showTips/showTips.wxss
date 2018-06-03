@@ -1,0 +1,35 @@
+/* pages/showTips/showTips.wxss */
+.showSub{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
+}
+.showBox{
+  border: 1px solid #4a90e2;
+  margin : 15px;
+  border-radius: 3px;
+  padding-top:15px;
+  padding:9px;
+  
+}
+.title{
+    display: flex;
+    height:20px;
+    flex-direction: row;
+    align-items: center;
+    margin:15px;
+}
+.headFont1 {
+  font-size: 28px;
+  color: #4a90e2;
+}
+.headFont2 {
+  font-size: 16px;
+  color: #4a90e2;
+}
+.headFont3 {
+  font-size: 18px;
+  color: #4a90e2;
+  font-weight:bold;
+}

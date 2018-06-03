@@ -13,11 +13,13 @@
     </view>
     <block wx:if="{{searchLogs.cityType != '国内'}}">
       <view>
-        <text class='headFont2'>当地时间：</text>
-        <text class='headFont3'>{{gy_dangdishicha.dateNow}}</text>
-        <text style='color:white;font-size:14px'> (时差</text>
-        <text style='color:#f3a422;font-size:14px'>{{gy_dangdishicha.shicha }}</text>
-        <text style='color:white;font-size:14px'>小时)</text>
+        <block wx:if="{{gy_dangdishicha.shicha != undefined}}">
+            <text class='headFont2'>当地时间：</text>
+            <text class='headFont3'>{{gy_dangdishicha.dateNow}}</text>
+            <text style='color:white;font-size:14px'> (时差</text>
+            <text style='color:#f3a422;font-size:14px'>{{gy_dangdishicha.shicha }}</text>
+            <text style='color:white;font-size:14px'>小时)</text>
+        </block>
       </view>
     </block>
   </view>
@@ -25,7 +27,7 @@
     <view>
       <text class='titleFont1'>{{job}}人员出差标准</text>
     </view>
-    <view class='showSub' id='tip' bindtap='onShowModal'>
+    <view class='showSub' id='tip' bindtap='onShowTips'>
       <image class='msgStyle' mode="aspectFit" src="{{msgImage}}"></image>
       <text class='titleFont2'>小贴士</text>
     </view>
@@ -33,7 +35,7 @@
   <view class='showBox'>
     <view class='showSub'>
       <text class='titleFont1'>交通标准 </text>
-      <view class='tip'>
+      <view class='tip' id='goupiao' bindtap='onShowTips'>
         <text style='color:white;font-size:14px'>购票注意事项</text>
       </view>
     </view>
@@ -47,9 +49,9 @@
     <view style='height:10px'></view>
     <view class='showSub'>
       <text class='titleFont1'>住宿标准 </text>
-      <view class='tip'>
+      <!--<view class='tip'>
         <text style='color:white;font-size:14px'>注意事项</text>
-      </view>
+      </view>-->
     </view>
 
     <view class='showDetail'>
@@ -110,4 +112,4 @@
     <view class="weui-footer__text">Copyright © 2018 Great-Chn, All Rights Reserved</view>
   </view>
 </view>
-<text>{{chailvInfo}}</text>
+<!--<text>{{chailvInfo}}</text>-->

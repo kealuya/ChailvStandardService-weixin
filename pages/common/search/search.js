@@ -28,6 +28,10 @@ Component({
     },
     //生命周期:ready
     ready: function () {
+
+        wx.setNavigationBarTitle({
+            title: '差旅标准查询'
+        })
         var target;
         if (this.data.cityType == "国内" && this.data.seletedType == "city"){
           target = travelDist.totalData.nation.provinceL;
