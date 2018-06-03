@@ -82,3 +82,8 @@
   flex-direction: row;
   flex-wrap: nowrap;
 }
+.mybtn{
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom: 20px;
+}

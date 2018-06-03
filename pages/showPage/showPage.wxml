@@ -1,115 +1,119 @@
 <!--pages/showPage/showPage.wxml-->
 <view class="page">
-  <view class='showHead'>
-    <view>
-      <text class='headFont1'>{{searchLogs.city}}  {{searchLogs.local}}</text>
-    </view>
-    <view>
-      <text class='headFont2'>{{searchLogs.goDate}}~{{searchLogs.backDate}}</text>
-    </view>
-    <view>
-      <text class='headFont2'>北京时间：</text>
-      <text class='headFont3'>{{now}}</text>
-    </view>
-    <block wx:if="{{searchLogs.cityType != '国内'}}">
-      <view>
-        <block wx:if="{{gy_dangdishicha.shicha != undefined}}">
-            <text class='headFont2'>当地时间：</text>
-            <text class='headFont3'>{{gy_dangdishicha.dateNow}}</text>
-            <text style='color:white;font-size:14px'> (时差</text>
-            <text style='color:#f3a422;font-size:14px'>{{gy_dangdishicha.shicha }}</text>
-            <text style='color:white;font-size:14px'>小时)</text>
+    <view class='showHead'>
+        <view>
+            <text class='headFont1'>{{searchLogs.city}}  {{searchLogs.local}}</text>
+        </view>
+        <view>
+            <text class='headFont2'>{{searchLogs.goDate}}~{{searchLogs.backDate}}</text>
+        </view>
+        <view>
+            <text class='headFont2'>北京时间：</text>
+            <text class='headFont3'>{{now}}</text>
+        </view>
+        <block wx:if="{{searchLogs.cityType != '国内'}}">
+            <view>
+                <block wx:if="{{gy_dangdishicha.shicha != undefined}}">
+                    <text class='headFont2'>当地时间：</text>
+                    <text class='headFont3'>{{gy_dangdishicha.dateNow}}</text>
+                    <text style='color:white;font-size:14px'> (时差</text>
+                    <text style='color:#f3a422;font-size:14px'>{{gy_dangdishicha.shicha }}</text>
+                    <text style='color:white;font-size:14px'>小时)</text>
+                </block>
+            </view>
         </block>
-      </view>
-    </block>
-  </view>
-  <view class='showTitle'>
-    <view>
-      <text class='titleFont1'>{{job}}人员出差标准</text>
     </view>
-    <view class='showSub' id='tip' bindtap='onShowTips'>
-      <image class='msgStyle' mode="aspectFit" src="{{msgImage}}"></image>
-      <text class='titleFont2'>小贴士</text>
+    <view class='showTitle'>
+        <view>
+            <text class='titleFont1'>{{job}}人员出差标准</text>
+        </view>
+        <view class='showSub' id='tip' bindtap='onShowTips'>
+            <image class='msgStyle' mode="aspectFit" src="{{msgImage}}"></image>
+            <text class='titleFont2'>小贴士</text>
+        </view>
     </view>
-  </view>
-  <view class='showBox'>
-    <view class='showSub'>
-      <text class='titleFont1'>交通标准 </text>
-      <view class='tip' id='goupiao' bindtap='onShowTips'>
-        <text style='color:white;font-size:14px'>购票注意事项</text>
-      </view>
-    </view>
-    <view class='showDetail'>
-      <view wx:for="{{jiaotongList}}" wx:key="*this">
-        <text style='color:#337ab7;font-size:14px'>•{{index}}:</text>
-        <text style='color:#f3a422;font-size:14px'>{{item}}</text>
-      </view>
+    <view class='showBox'>
+        <view class='showSub'>
+            <text class='titleFont1'>交通标准 </text>
+            <view class='tip' id='goupiao' bindtap='onShowTips'>
+                <text style='color:white;font-size:14px'>购票注意事项</text>
+            </view>
+        </view>
+        <view class='showDetail'>
+            <view wx:for="{{jiaotongList}}" wx:key="*this">
+                <text style='color:#337ab7;font-size:14px'>•{{index}}:</text>
+                <text style='color:#f3a422;font-size:14px'>{{item}}</text>
+            </view>
 
-    </view>
-    <view style='height:10px'></view>
-    <view class='showSub'>
-      <text class='titleFont1'>住宿标准 </text>
-      <!--<view class='tip'>
+        </view>
+        <view style='height:10px'></view>
+        <view class='showSub'>
+            <text class='titleFont1'>住宿标准 </text>
+            <!--<view class='tip'>
         <text style='color:white;font-size:14px'>注意事项</text>
       </view>-->
+        </view>
+
+        <view class='showDetail'>
+            <view wx:for="{{zhusuJson}}" wx:key="*this">
+                <text style='color:#f3a422;font-size:14px'>{{index}}</text>
+                <text style='color:#337ab7;font-size:14px'>{{item}}</text>
+            </view>
+
+        </view>
+        <view style='border-top:2px dashed #4a90e2;height: 1px;'></view>
+        <view style='height:10px'></view>
+
+
+        <view class='showSub'>
+            <text class='titleFont1'>伙食补助 </text>
+        </view>
+
+        <view class='showDetail'>
+            <view wx:for="{{huoshiList}}" wx:key="*this">
+                <text style='color:#f3a422;font-size:14px'>{{item.total}}元</text>
+                <text style='color:#337ab7;font-size:14px'>（</text>
+                <text style='color:#337ab7;font-size:14px'>{{item.daily}}元</text>
+                <text style='color:#337ab7;font-size:14px'>/天)</text>
+            </view>
+        </view>
+
+
+
+        <view class='showSub'>
+            <block wx:if="{{searchLogs.cityType != '国内'}}">
+                <text class='titleFont1'>公杂费补助 </text>
+            </block>
+            <block wx:else>
+                <text class='titleFont1'>交通补助 </text>
+            </block>
+        </view>
+
+        <view class='showDetail'>
+            <view wx:for="{{buzhuList}}" wx:key="*this">
+                <text style='color:#f3a422;font-size:14px'>{{item.total}}元</text>
+                <text style='color:#337ab7;font-size:14px'>（</text>
+                <text style='color:#337ab7;font-size:14px'>{{item.daily}}元</text>
+                <text style='color:#337ab7;font-size:14px'>/天)</text>
+            </view>
+        </view>
+        <view style='height:10px'></view>
+        <view class='showZongjin'>
+            <text style='color:#337ab7;font-size:14px'>您到{{zongjinJson.city}}出差共</text>
+            <text style='color:#f3a422;font-size:14px'>{{zongjinJson.dateIntervel}}天</text>
+            <text style='color:#337ab7;font-size:14px'>，可获取差旅补助</text>
+            <text style='color:#f3a422;font-size:14px'>{{zongjinJson.total}}元</text>
+        </view>
     </view>
-
-    <view class='showDetail'>
-      <view wx:for="{{zhusuJson}}" wx:key="*this">
-        <text style='color:#f3a422;font-size:14px'>{{index}}</text>
-        <text style='color:#337ab7;font-size:14px'>{{item}}</text>
-      </view>
-
+    
+    <view class="mybtn">
+        <button class="weui-btn" open-type="share"   style='background-color: #4a90e2;' type="primary">分享</button>
     </view>
-    <view style='border-top:2px dashed #4a90e2;height: 1px;'></view>
-    <view style='height:10px'></view>
-
-
-    <view class='showSub'>
-      <text class='titleFont1'>伙食补助 </text>
+    <view class="weui-footer weui-footer_fixed-bottom">
+        <view class="weui-footer__links">
+            <view url="" class="weui-footer__link">天津神州浩天科技有限公</view>
+        </view>
+        <view class="weui-footer__text">Copyright © 2018 Great-Chn, All Rights Reserved</view>
     </view>
-
-    <view class='showDetail'>
-      <view wx:for="{{huoshiList}}" wx:key="*this">
-        <text style='color:#f3a422;font-size:14px'>{{item.total}}元</text>
-        <text style='color:#337ab7;font-size:14px'>（</text>
-        <text style='color:#337ab7;font-size:14px'>{{item.daily}}元</text>
-        <text style='color:#337ab7;font-size:14px'>/天)</text>
-      </view>
-    </view>
-
-
-
-    <view class='showSub'>
-    <block wx:if="{{searchLogs.cityType != '国内'}}">
-      <text class='titleFont1'>公杂费补助 </text>
-    </block>
-    <block wx:else>
-      <text class='titleFont1'>交通补助 </text>
-    </block>
-    </view>
-
-    <view class='showDetail'>
-      <view wx:for="{{buzhuList}}" wx:key="*this">
-        <text style='color:#f3a422;font-size:14px'>{{item.total}}元</text>
-        <text style='color:#337ab7;font-size:14px'>（</text>
-        <text style='color:#337ab7;font-size:14px'>{{item.daily}}元</text>
-        <text style='color:#337ab7;font-size:14px'>/天)</text>
-      </view>
-    </view>
-    <view style='height:10px'></view>
-    <view class='showZongjin'>
-      <text style='color:#337ab7;font-size:14px'>您到{{zongjinJson.city}}出差共</text>
-      <text style='color:#f3a422;font-size:14px'>{{zongjinJson.dateIntervel}}天</text>
-      <text style='color:#337ab7;font-size:14px'>，可获取差旅补助</text>
-      <text style='color:#f3a422;font-size:14px'>{{zongjinJson.total}}元</text>
-    </view>
-  </view>
-  <view class="weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__links">
-      <view url="" class="weui-footer__link">天津神州浩天科技有限公</view>
-    </view>
-    <view class="weui-footer__text">Copyright © 2018 Great-Chn, All Rights Reserved</view>
-  </view>
 </view>
 <!--<text>{{chailvInfo}}</text>-->
