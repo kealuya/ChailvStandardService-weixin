@@ -22,7 +22,12 @@
             <navigator url="../city/city?city={{city}}&cityType={{cityType}}&city_value={{city_value}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-label">
                     <image src="{{icon1}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-                    <text>省市</text>
+                    <block wx:if="{{countries[countryIndex] == '国内'}}">
+                        <text>省市</text>
+                    </block>
+                    <block wx:else>
+                        <text>国家</text>
+                    </block>
                 </view>
                 <text class="weui-cell__bd">{{city}}</text>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
