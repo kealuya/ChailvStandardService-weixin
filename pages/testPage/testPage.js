@@ -34,7 +34,7 @@ Page({
       title: '差旅标准查询'
     })
     var countries = travelDist.totalData.foreign.continenL;
-    countries.splice(0, 0, "国内");
+    //countries.splice(0, 0, "国内");
     var myDate = new Date();
     var Year = myDate.getFullYear();
     var Month = myDate.getMonth() + 1;

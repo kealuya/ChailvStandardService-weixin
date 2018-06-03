@@ -63,6 +63,7 @@ var jobGrade = {
 var totalData = {
 	"foreign": {
 		"continenL": [
+            "国内",
 			"亚洲",
 			"非洲",
 			"欧洲",
