@@ -98,7 +98,7 @@
             </view>
         </view>
         <view style='height:10px'></view>
-        <view class='showZongjin'>
+        <view>
             <text style='color:#337ab7;font-size:14px'>您到{{zongjinJson.city}}出差共</text>
             <text style='color:#f3a422;font-size:14px'>{{zongjinJson.dateIntervel}}天</text>
             <text style='color:#337ab7;font-size:14px'>，可获取差旅补助</text>
@@ -109,11 +109,14 @@
     <view class="mybtn">
         <button class="weui-btn" open-type="share"   style='background-color: #4a90e2;' type="primary">分享</button>
     </view>
-    <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="mybtn">
+        <button class="weui-btn"  bindtap='goHome'  style='background-color: #4a90e2;' type="primary">返回首页</button>
+    </view>
+    <!--<view class="weui-footer weui-footer_fixed-bottom">
         <view class="weui-footer__links">
             <view url="" class="weui-footer__link">天津神州浩天科技有限公司</view>
         </view>
         <view class="weui-footer__text">Copyright © 2018 Great-Chn, All Rights Reserved</view>
-    </view>
+    </view>-->
 </view>
 <!--<text>{{chailvInfo}}</text>-->
