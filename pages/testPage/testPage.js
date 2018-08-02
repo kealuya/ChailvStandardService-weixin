@@ -208,7 +208,7 @@ Page({
     wx.setStorageSync('searchLogs', searchLogs)
 
     wx.navigateTo({
-      url: '../showPage/showPage?from=1',
+        url: '../showPage/showPage?share=1',
     })
 
   },

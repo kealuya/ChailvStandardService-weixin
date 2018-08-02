@@ -2,7 +2,7 @@
 var travelDist = require('../resource/datajs/travelDist.js');
 
 Page({
-    
+
     /**
      * 页面的初始数据
      */
@@ -28,6 +28,28 @@ Page({
         wx.setNavigationBarTitle({
             title: '差旅标准查询'
         })
+
+        //console.log(JSON.stringify(wx.getStorageSync('searchLogs')[0]));
+        if (options.share && options.share == '1') {
+            ;
+        } else {
+            var searchLogs = wx.getStorageSync('searchLogs') || []
+
+            if (searchLogs.length == 10) {
+                searchLogs.pop();
+            }
+            var data = JSON.parse(options.params);
+            searchLogs.unshift({
+                cityType: data.cityType,
+                city: data.city,
+                local: data.local,
+                goDate: data.goDate,
+                backDate: data.backDate,
+                jobgradeIndex: data.jobgradeIndex,
+                jobgrades: data.jobgrades
+            })
+            wx.setStorageSync('searchLogs', searchLogs)
+        }
 
         //从storage里取的最新的请求信息
         var searchLogs = wx.getStorageSync('searchLogs')[0];
@@ -94,7 +116,7 @@ Page({
             //国外的场合
             var district_TM = travelDist.totalData.foreign.continent[searchLogs.cityType][searchLogs.city][searchLogs.local];
             var gy_dangdishicha = {};
-            if (district_TM.timeLag != undefined && district_TM.timeLag != 0 ) {
+            if (district_TM.timeLag != undefined && district_TM.timeLag != 0) {
                 var dateNow = new Date().getTime() + district_TM.timeLag * 60 * 60 * 1000;
                 dateNow = new Date(dateNow).pattern("MM-dd HH:mm");
                 gy_dangdishicha = {
@@ -198,14 +220,7 @@ Page({
     onReachBottom: function () {
 
     },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    },
-
+ 
     bindBtnClick: () => {
         wx.navigateBack({
             delta: 1
@@ -217,6 +232,28 @@ Page({
             url: '../showTips/showTips?type=' + e.currentTarget.id + "&cityType=" + searchLogs.cityType,
         })
 
- 
+
+    },
+    goHome: () => {
+        wx.navigateTo({
+            url: '../testPage/testPage',
+        })
+    },
+    onShareAppMessage: function(res)  {
+        var searchLogs = this.data.searchLogs;
+        // var paramStr =
+        //     '' + 'cityType=' + searchLogs.cityType +
+        //     '&' + 'city=' + searchLogs.city +
+        //     '&' + 'local=' + searchLogs.local +
+        //     '&' + 'goDate=' + searchLogs.goDate +
+        //     '&' + 'backDate=' + searchLogs.backDate +
+        //     '&' + 'jobgradeIndex=' + searchLogs.jobgradeIndex +
+        //     '&' + 'jobgrades=' + searchLogs.jobgrades
+        var paramStr = JSON.stringify(searchLogs);
+        return {
+            title: '浩天差旅标准查询服务',
+            path: 'pages/showPage/showPage?params=' + paramStr,
+
+        }
     }
 })
