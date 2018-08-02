@@ -211,6 +211,13 @@ Page({
       url: '../showPage/showPage?from=1',
     })
 
+  },
+
+  bindChailvClick: function () {
+    wx.navigateTo({
+      url: '../showChailv/showChailv',
+    })
+
   }
 
 
