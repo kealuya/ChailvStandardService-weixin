@@ -48,6 +48,12 @@ page {
   align-items: center;
   justify-content: center;
 }
+.proImg2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
 /*根布局*/
 

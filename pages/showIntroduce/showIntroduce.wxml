@@ -11,9 +11,18 @@
       </view>
       <!-- <view class="mask-shadow {{runAM ? 'mask-shadow-on' : ''}}"></view> -->
       <view class="mask-con {{chooseSize ? 'mask-con-show' : 'mask-con-hide'}} {{item.selected ? '' : 'unshow'}}" bindtap='chooseSezi' data-index='{{item.id}}'>
+			  <view class='proImg' wx:if="{{item.proUrl_2 != ''}}">
+          <image src="{{item.proUrl_2}}" class="slide-image" mode="{{item.mode}}" />
+        </view>
         <view class="show_introduce">
           <rich-text nodes="{{item.nodes}}" />
         </view>
+				<!-- <view class='proImg2' wx:if="{{item.proUrl_3 != null && item.proUrl_3 != ''}}">
+          <image src="{{item.proUrl_3}}" class="slide-image" mode="{{item.mode_2}}" />
+        </view>
+				<view class="show_introduce" wx:if="{{item.nodes2 != null}}">
+          <rich-text nodes="{{item.nodes2}}" />
+        </view> -->
         <view class="footer">
           <view class="weui-footer__link">
             <text>神州浩天差旅服务平台  具体咨询电话：022-58388791（任）</text>

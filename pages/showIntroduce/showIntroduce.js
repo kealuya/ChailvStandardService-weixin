@@ -11,15 +11,18 @@ Page({
         id: '0',
         proUrl: '../resource/image/1.jpg',
         page: '1/4',
+        proUrl_2: '../resource/image/1-1.gif',
+        mode: 'aspectFit',
         nodes: [{
           name: "div",
           attrs: {
-            class: "headFont2",
+            class: "headFont1",
+            style: 'clear:both;'
           },
           children: [{
             name: "li",
             attrs: {
-              style: "margin-top:30px;"
+              // style: "margin-top:30px;"
             },
             children: [{
               type: "text",
@@ -28,7 +31,7 @@ Page({
           }, {
             name: "li",
             attrs: {
-              style: "margin-top:30px;"
+              // style: "margin-top:30px;"
             },
             children: [{
               type: "text",
@@ -37,7 +40,7 @@ Page({
           }, {
             name: "li",
             attrs: {
-              style: "margin-top:30px;"
+              // style: "margin-top:30px;"
             },
             children: [{
               type: "text",
@@ -51,45 +54,70 @@ Page({
         id: '1',
         proUrl: '../resource/image/2.jpg',
         page: '2/4',
+        proUrl_2: '../resource/image/2-1.png',
+        mode: 'widthFix',
         nodes: [{
           name: "div",
           attrs: {
-            class: "headFont2",
+						class: "headFont1",
+						style: 'clear:both;'
           },
           children: [{
             name: "li",
             attrs: {
-              style: "margin-top:30px;"
-            },
-            children: [{
-              type: "text",
-              text: '资金系统化实施，全面对接浩天账务，网报系统，打破隔阂、0阻碍！'
-            }],
-          }, {
-            name: "li",
-            attrs: {
-              style: "margin-top:30px;"
+              // style: "margin-top:10px;"
             },
             children: [{
               type: "text",
               text: '自动化、集成化差旅管理平台，便于学校对于商旅资源集中采购'
             }],
-          }],
+					}, {
+							name: "li",
+							attrs: {
+								// style: "margin-top:10px;"
+							},
+							children: [{
+								type: "text",
+								text: '自动化、集成化差旅管理平台，便于学校对于商旅资源集中采购'
+							}],
+						}],
         }],
+        // proUrl_3: '../resource/image/2-2.png',
+				// mode_2: 'widthFix',
+        // nodes2: [{
+        //   name: "div",
+        //   attrs: {
+				// 		class: "headFont1",
+				// 		style: 'clear:both;'
+        //   },
+        //   children: [{
+        //     name: "li",
+        //     attrs: {
+        //       // style: "margin-top:10px;"
+        //     },
+        //     children: [{
+        //       type: "text",
+        //       text: '自动化、集成化差旅管理平台，便于学校对于商旅资源集中采购'
+        //     }],
+        //   }],
+        // }],
       },
       {
         id: '2',
         proUrl: '../resource/image/3.jpg',
         page: '3/4',
+        proUrl_2: '../resource/image/3-1.png',
+        mode: 'aspectFit',
         nodes: [{
           name: "div",
           attrs: {
-            class: "headFont2",
+            class: "headFont1",
+            style: 'clear:both;'
           },
           children: [{
             name: "li",
             attrs: {
-              style: "margin-top:30px;"
+              // style: "margin-top:30px;"
             },
             children: [{
               type: "text",
@@ -98,7 +126,7 @@ Page({
           }, {
             name: "li",
             attrs: {
-              style: "margin-top:30px;"
+              // style: "margin-top:30px;"
             },
             children: [{
               type: "text",
@@ -107,7 +135,7 @@ Page({
           }, {
             name: "li",
             attrs: {
-              style: "margin-top:30px;"
+              // style: "margin-top:30px;"
             },
             children: [{
               type: "text",
@@ -120,6 +148,8 @@ Page({
         id: '3',
         proUrl: '../resource/image/4.jpg',
         page: '4/4',
+        proUrl_2: '',
+        mode: '',
         nodes: [{
           name: "div",
           attrs: {
@@ -321,14 +351,15 @@ Page({
     chooseSize: false,
     animationData: {},
     autoScroll: 0,
-    bottom: 'top: 74%;'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.setNavigationBarTitle({
+      title: '差旅服务平台介绍'
+    })
   },
 
   /**
@@ -377,7 +408,6 @@ Page({
         // 改变view里面的Wx：if
         chooseSize: false,
         scrollLeft: autoScroll * index,
-        bottom: 'bottom: 0;'
       })
     } else {
       // 用setData改变当前动画
@@ -387,7 +417,6 @@ Page({
         // 改变view里面的Wx：if
         chooseSize: true,
         scrollLeft: autoScroll * index,
-        bottom: 'bottom: 0;'
       })
     }
 

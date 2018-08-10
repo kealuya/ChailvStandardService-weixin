@@ -104,7 +104,7 @@
     </view>
     <view class="mybtn">
       <button class="weui-btn" bindtap="bindBtnClick" style='background-color: #4a90e2;' type="primary">差旅标准查询</button>
-			<button class="weui-btn" bindtap="introduceBtnClick" style='background-color: #4a90e2;' type="primary">差旅服务平台</button>
+			<button class="weui-btn" bindtap="introduceBtnClick" style='background-color: #4a90e2;' type="primary">{{introduce}}</button>
     </view>
     <view class="weui-footer weui-footer_fixed-bottom">
       <view class="weui-footer__links">
