@@ -24,7 +24,7 @@ Page({
     jobgrades: ["部级", "司局级", "普通"],
     jobgradeIndex: 0,
     windowWidth: wx.getSystemInfoSync().windowWidth,
-		introduce:"★☆★ 差旅服务平台 ★☆★",
+    introduce:"★☆★ 浩天差旅服务平台 ★☆★",
   },
 
   /**
@@ -246,12 +246,12 @@ function timer(that) {
 	timer = setInterval(function () {
 		if (isStar){
 			that.setData({
-				introduce: "☆★☆ 差旅服务平台 ☆★☆",
+				introduce: "☆★☆ 浩天差旅服务平台 ☆★☆",
 			})
 			isStar = false;
 		}else{
 			that.setData({
-				introduce: "★☆★ 差旅服务平台 ★☆★",
+        introduce: "★☆★ 浩天差旅服务平台 ★☆★",
 			})
 			isStar = true;
 		}

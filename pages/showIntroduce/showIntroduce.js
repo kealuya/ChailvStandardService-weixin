@@ -35,7 +35,7 @@ Page({
             },
             children: [{
               type: "text",
-              text: '可与商旅平台月度统一对公开票，享受自动化结算和对账'
+              text: '可与商旅平台月度统一对公开票（所有费用一张发票），免去财务处审票、贴票烦恼。'
             }],
           }, {
             name: "li",
@@ -44,7 +44,7 @@ Page({
             },
             children: [{
               type: "text",
-              text: '免除员工个人垫资、报销等繁琐流程'
+              text: '无需员工个人垫资，杜绝丢票、漏票现象，从此告别贴票、填单等繁琐报销流程。'
             }],
           }]
         }],
@@ -54,7 +54,7 @@ Page({
         id: '1',
         proUrl: '../resource/image/2.jpg',
         page: '2/4',
-        proUrl_2: '../resource/image/2-1.png',
+        proUrl_2: '../resource/image/对接图.jpg',
         mode: 'widthFix',
         nodes: [{
           name: "div",
@@ -69,7 +69,7 @@ Page({
             },
             children: [{
               type: "text",
-              text: '自动化、集成化差旅管理平台，便于学校对于商旅资源集中采购'
+              text: '全面对接高校财务、网上报销系统，购票同步冻结项目差旅额度。'
             }],
 					}, {
 							name: "li",
@@ -78,7 +78,7 @@ Page({
 							},
 							children: [{
 								type: "text",
-								text: '自动化、集成化差旅管理平台，便于学校对于商旅资源集中采购'
+								text: '财务处一键生成报销单+行程单，自动对账，账务自动制单，账务管理一气呵成。'
 							}],
 						}],
         }],
@@ -106,7 +106,7 @@ Page({
         id: '2',
         proUrl: '../resource/image/3.jpg',
         page: '3/4',
-        proUrl_2: '../resource/image/3-1.png',
+        proUrl_2: '../resource/image/差旅自动提示加违规.jpg',
         mode: 'aspectFit',
         nodes: [{
           name: "div",
@@ -121,7 +121,7 @@ Page({
             },
             children: [{
               type: "text",
-              text: '差旅标准、预算和资金控制系统化实施。'
+              text: '购票时超标线路醒目提示，并标明出行人所对应职级的差旅标准。'
             }],
           }, {
             name: "li",
@@ -130,7 +130,7 @@ Page({
             },
             children: [{
               type: "text",
-              text: '自动提醒，自动比价，协助选票，规避差旅政策风险。'
+              text: '自动提醒，自动比价，智能协助选票，免去多平台择票的费时费力。'
             }],
           }, {
             name: "li",
@@ -139,7 +139,7 @@ Page({
             },
             children: [{
               type: "text",
-              text: '支付方式灵活，还可以根据差旅数据进行统计、分析。'
+              text: '差旅标准提示完全符合国家颁布的【差旅住宿费和伙食补助费标准表】，确保出行合法合规。'
             }],
           }],
         }],
