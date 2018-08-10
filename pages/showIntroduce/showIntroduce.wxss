@@ -1,0 +1,159 @@
+/* pages/showChailv/showChailv.wxss */
+@import "../resource/icon/icon.wxss";
+
+page {
+  height: 100%;
+  color: #337ab7;
+	background: linear-gradient(#42a2fc,#add3f7);
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+  z-index: 100;
+  flex-flow: column;
+}
+
+.scroll-view-item_H {
+  display: inline-block;
+  width: 100%;
+}
+
+.scroll-view_M {
+  white-space: nowrap;
+  margin: 120rpx;
+  border: 2rpx solid #4a90e2;
+  box-shadow: 5rpx 5rpx 10rpx 5rpx rgb(114, 114, 114);
+  text-align: center;
+  border-radius: 12rpx;
+  height: 70%;
+	display: flex;
+	align-items: space-between;
+	flex-direction: column;
+	background-color: white;
+}
+
+.selected {
+  /* height: 100%; */
+  width: 90%;
+  margin: 5%;
+		align-items: space-between;
+	flex-direction: column;
+	background-color: white;
+}
+
+.proImg {
+  margin: 30rpx 30rpx 10rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/*根布局*/
+
+.mask-con {
+  position: absolute;
+  width: 90%;
+  height: 75%;
+  margin: 5%;
+  bottom: -100%;
+  border: 2rpx solid #4a90e2;
+  background-color: white;
+  transition: 2s;
+  box-shadow: 5rpx 5rpx 10rpx 5rpx #aaa;
+  white-space: pre-line;
+  border-radius: 12rpx;
+}
+
+.mask-con-show {
+  bottom: 0;
+}
+
+.mask-con-hide {
+  transition: 0s;
+}
+
+.unshow {
+  display: none;
+}
+
+.show_text {
+  word-wrap: break-word;
+  word-break: break-all;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 1;
+}
+
+.show_introduce {
+  word-wrap: break-word;
+  word-break: break-all;
+  text-align: left;
+  line-height: 50rpx;
+  padding: 20rpx;
+  font-size: 1;
+}
+
+.headFont1 {
+  font-size: 30rpx;
+  color: #4a90e2;
+  font-weight: bold;
+  line-height: 44rpx;
+}
+
+.headFont2 {
+  font-size: 40rpx;
+  color: #4a90e2;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+
+.arrow {
+  margin-right: 10rpx;
+  vertical-align: middle;
+  width: 60rpx;
+  height: 40rpx;
+}
+
+.middle {
+  display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.footer {
+  position: absolute;
+	bottom: 0rpx;
+}
+
+.footer2 {
+	align-content:flex-end;
+}
+
+.headFont3 {
+  font-size: 60rpx;
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+.float_right {
+  /* float:right; */
+  right: 0;
+}
+
+.weui-footer__link {
+	word-wrap: break-word;
+  word-break: break-all;
+  text-align: center;
+  line-height: 50rpx;
+  padding: 10rpx;
+  font-size: 23rpx;
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:32rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

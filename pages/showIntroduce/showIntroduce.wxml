@@ -1,0 +1,25 @@
+<scroll-view class="scroll-view_H" scroll-x="true" scroll-with-animation="true" style="width: 100%;height: 100%" bindscroll="getSelectItem" scroll-left="{{scrollLeft}}" scroll-with-animation="true" scroll-x="{{!chooseSize}}">
+  <block wx:for="{{proList}}" wx:key="unique" wx:for-index="id" wx:for-item="item">
+    <view class="scroll-view-item_H" data-index='{{item.index}}'>
+      <view class="scroll-view_M {{item.selected ? 'selected' : ''}} " animation='{{animationData}}' bindtap='chooseSezi' data-index='{{item.id}}'>
+        <view class='proImg'>
+          <image src="{{item.proUrl}}" class="slide-image" mode="widthFix" />
+        </view>
+        <view class='footer2' style='height:{{contentHeight1}}rpx'>
+          <view class="headFont2  iconfont {{chooseSize ? 'icon-xiashuangjiantou' : 'icon-shangshuangjiantou'}}" style="font-size:60rpx;text-align: center;padding-top:{{contentHeight2}}rpx"></view>
+        </view>
+      </view>
+      <!-- <view class="mask-shadow {{runAM ? 'mask-shadow-on' : ''}}"></view> -->
+      <view class="mask-con {{chooseSize ? 'mask-con-show' : 'mask-con-hide'}} {{item.selected ? '' : 'unshow'}}" bindtap='chooseSezi' data-index='{{item.id}}'>
+        <view class="show_introduce">
+          <rich-text nodes="{{item.nodes}}" />
+        </view>
+        <view class="footer">
+          <view class="weui-footer__link">
+            <text>神州浩天差旅服务平台  具体咨询电话：022-58388791（任）</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>

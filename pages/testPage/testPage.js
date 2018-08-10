@@ -29,7 +29,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: '差旅标准查询'
     })
@@ -53,7 +53,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
     console.log("生命周期函数--监听页面初次渲染完成");
   },
@@ -61,7 +61,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     console.log("生命周期函数--监听页面显示");
 
   },
@@ -69,39 +69,39 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
-  bindCountryChange: function (e) {
+  bindCountryChange: function(e) {
     var country = e.detail.value;
     var city;
     var local;
@@ -125,7 +125,7 @@ Page({
   },
 
 
-  setCityForSonPage: function (citySettingJson) {
+  setCityForSonPage: function(citySettingJson) {
 
     var cityType = this.data.cityType;
     var city = citySettingJson.city;
@@ -144,7 +144,7 @@ Page({
       local_value: 0
     })
   },
-  setLocalForSonPage: function (localSettingJson) {
+  setLocalForSonPage: function(localSettingJson) {
 
     var local = localSettingJson.local == '' ? '-' : localSettingJson.local;
     this.setData({
@@ -154,7 +154,7 @@ Page({
 
   },
 
-  bindGoDateChange: function (e) {
+  bindGoDateChange: function(e) {
     var go = e.detail.value;
     var back = this.data.backDate;
     if (go > back) {
@@ -169,7 +169,7 @@ Page({
     }
   },
 
-  bindBackDateChange: function (e) {
+  bindBackDateChange: function(e) {
     var go = this.data.goDate;
     var back = e.detail.value;
     if (go > back) {
@@ -183,12 +183,12 @@ Page({
       })
     }
   },
-  bindJobgradeChange: function (e) {
+  bindJobgradeChange: function(e) {
     this.setData({
       jobgradeIndex: e.detail.value
     });
   },
-  bindBtnClick: function () {
+  bindBtnClick: function() {
 
     var searchLogs = wx.getStorageSync('searchLogs') || []
 
@@ -211,7 +211,29 @@ Page({
       url: '../showPage/showPage?from=1',
     })
 
-  }
+  },
+  introduceBtnClick: function() {
 
+    var searchLogs = wx.getStorageSync('searchLogs') || []
 
+    if (searchLogs.length == 10) {
+      searchLogs.pop();
+    }
+    var data = this.data;
+    searchLogs.unshift({
+      cityType: data.cityType,
+      city: data.city,
+      local: data.local,
+      goDate: data.goDate,
+      backDate: data.backDate,
+      jobgradeIndex: data.jobgradeIndex,
+      jobgrades: data.jobgrades
+    })
+    wx.setStorageSync('searchLogs', searchLogs)
+
+    wx.navigateTo({
+      url: '../showIntroduce/showIntroduce',
+    })
+
+  },
 })

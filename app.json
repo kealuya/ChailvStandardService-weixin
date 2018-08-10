@@ -7,7 +7,8 @@
     "pages/city/city",
     "pages/showPage/showPage",
     "pages/local/local",
-    "pages/showTips/showTips"
+    "pages/showTips/showTips",
+    "pages/showIntroduce/showIntroduce"
   ],
   "window":{
     "backgroundTextStyle":"light",
