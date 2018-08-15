@@ -1,16 +1,16 @@
-<scroll-view class="scroll-view_H" scroll-x="true" scroll-with-animation="true" style="width: 100%;height: 100%" bindscroll="getSelectItem" scroll-left="{{scrollLeft}}" scroll-with-animation="true" scroll-x="{{!chooseSize}}">
+<scroll-view class="scroll-view_H" scroll-x="true" scroll-with-animation="true" style="width: 100%;height: 100%" bindscroll="getSelectItem" scroll-left="{{scrollLeft}}" scroll-with-animation="true" scroll-x="{{!chooseSize}}"  >
   <block wx:for="{{proList}}" wx:key="unique" wx:for-index="id" wx:for-item="item">
     <view class="scroll-view-item_H" data-index='{{item.index}}'>
-      <view class="scroll-view_M {{item.selected ? 'selected' : ''}} " animation='{{animationData}}' bindtap='chooseSezi' data-index='{{item.id}}'>
+      <view class="scroll-view_M {{item.selected ? 'selected' : ''}} " animation='{{animationData}}' bindtap='chooseSezi' data-index='{{item.id}}' bindtouchmove="handletouchmove" bindtouchstart="handletouchstart" bindtouchend="handletouchend">
         <view class='proImg'>
           <image src="{{item.proUrl}}" class="slide-image" mode="widthFix" />
         </view>
         <view class='footer2' style='height:{{contentHeight1}}rpx'>
-          <view class="headFont2  iconfont {{chooseSize ? 'icon-xiashuangjiantou' : 'icon-shangshuangjiantou'}}" style="font-size:60rpx;text-align: center;padding-top:{{contentHeight2}}rpx"></view>
+          <view class="headFont2  iconfont {{chooseSize ? 'icon-sanjiaoxing-down' : 'icon-sanjiaoxing-up'}}" style="text-align: center;padding-top:{{contentHeight2}}rpx">{{chooseSize ? '戳此返回' : '戳此了解更多'}}</view>
         </view>
       </view>
       <!-- <view class="mask-shadow {{runAM ? 'mask-shadow-on' : ''}}"></view> -->
-      <view class="mask-con {{chooseSize ? 'mask-con-show' : 'mask-con-hide'}} {{item.selected ? '' : 'unshow'}}" bindtap='chooseSezi' data-index='{{item.id}}'>
+      <view class="mask-con {{chooseSize ? 'mask-con-show' : 'mask-con-hide'}} {{item.selected ? '' : 'unshow'}}" bindtap='chooseSezi' data-index='{{item.id}}' bindtouchmove="handletouchmove" bindtouchstart="handletouchstart" bindtouchend="handletouchend">
 			  <view class='proImg' wx:if="{{item.proUrl_2 != ''}}">
           <image src="{{item.proUrl_2}}" class="slide-image" mode="{{item.mode}}" />
         </view>

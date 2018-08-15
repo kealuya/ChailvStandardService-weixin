@@ -24,7 +24,6 @@ Page({
     jobgrades: ["部级", "司局级", "普通"],
     jobgradeIndex: 0,
     windowWidth: wx.getSystemInfoSync().windowWidth,
-    introduce:"★☆★ 浩天差旅服务平台 ★☆★",
   },
 
   /**
@@ -48,8 +47,6 @@ Page({
       goDate: tempDate,
       backDate: tempDate
     });
-		//定时器
-		timer(this);
     console.log("生命周期函数--监听页面加载");
   },
 
@@ -241,19 +238,3 @@ Page({
   },
 
 })
-function timer(that) {
-	var isStar = true;
-	timer = setInterval(function () {
-		if (isStar){
-			that.setData({
-				introduce: "☆★☆ 浩天差旅服务平台 ☆★☆",
-			})
-			isStar = false;
-		}else{
-			that.setData({
-        introduce: "★☆★ 浩天差旅服务平台 ★☆★",
-			})
-			isStar = true;
-		}
-	}, 1000);
-}

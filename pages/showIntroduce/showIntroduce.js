@@ -59,8 +59,8 @@ Page({
         nodes: [{
           name: "div",
           attrs: {
-						class: "headFont1",
-						style: 'clear:both;'
+            class: "headFont1",
+            style: 'clear:both;'
           },
           children: [{
             name: "li",
@@ -71,24 +71,24 @@ Page({
               type: "text",
               text: '全面对接高校财务、网上报销系统，购票同步冻结项目差旅额度。'
             }],
-					}, {
-							name: "li",
-							attrs: {
-								// style: "margin-top:10px;"
-							},
-							children: [{
-								type: "text",
-								text: '财务处一键生成报销单+行程单，自动对账，账务自动制单，账务管理一气呵成。'
-							}],
-						}],
+          }, {
+            name: "li",
+            attrs: {
+              // style: "margin-top:10px;"
+            },
+            children: [{
+              type: "text",
+              text: '财务处一键生成报销单+行程单，自动对账，账务自动制单，账务管理一气呵成。'
+            }],
+          }],
         }],
         // proUrl_3: '../resource/image/2-2.png',
-				// mode_2: 'widthFix',
+        // mode_2: 'widthFix',
         // nodes2: [{
         //   name: "div",
         //   attrs: {
-				// 		class: "headFont1",
-				// 		style: 'clear:both;'
+        // 		class: "headFont1",
+        // 		style: 'clear:both;'
         //   },
         //   children: [{
         //     name: "li",
@@ -488,7 +488,55 @@ Page({
     that.setData({
       proList: that.data.proList,
       giftNo: this.data.proList[curIndex].id,
-      autoScroll: itemWidth
+      autoScroll: itemWidth,
     });
-  }
+  },
+
+  handletouchmove: function(event) {
+    // console.log(event)
+		var that = this;
+		var chooseSize = that.data.chooseSize;
+		if (that.data.flag !== 0) {
+      return
+    }
+    let currentX = event.touches[0].pageX;
+    let currentY = event.touches[0].pageY;
+		let tx = currentX - that.data.lastX;
+		let ty = currentY - that.data.lastY;
+    let text = "";
+    //左右方向滑动
+    if (Math.abs(tx) < Math.abs(ty)) {
+			if (ty < 0 && !chooseSize) {
+        text = "向上滑动";
+				that.data.flag = 3;
+				that.chooseSezi(event);
+
+			} else if (ty > 0 && chooseSize) {
+        text = "向下滑动";
+				that.data.flag = 4
+				that.chooseSezi(event);
+      }
+
+    }
+
+    //将当前坐标进行保存以进行下一次计算
+		that.data.lastX = currentX;
+		that.data.lastY = currentY;
+		that.setData({
+      text: text,
+    });
+  },
+
+
+	handletouchstart: function (event) {
+		// console.log(event)
+		this.data.lastX = event.touches[0].pageX;
+		this.data.lastY = event.touches[0].pageY;
+	},
+	handletouchend: function (event) {
+		this.data.flag = 0
+		this.setData({
+			text: "没有滑动",
+		});
+	}
 })
